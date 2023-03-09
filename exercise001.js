@@ -4,11 +4,18 @@ const promise = new Promise((resolve, reject) => {
 
 	if (randomInt % 2 === 0) {
 		// Success
-		setTimeout(() => resolve('done'), 2000);
+		setTimeout(() => resolve("done"), 2000);
 	} else {
 		// Failure
-		setTimeout(() => reject('error'), 2000);
+		setTimeout(() => reject("error"), 2000);
 	}
 });
 
+promise
+	.then((result) => {
+		console.log(`Yay! Promise resolved with response: ${result}`);
+	})
+	.catch((err) => {
+		console.log(`Boo. Promise rejected with response: ${err}`);
+	});
 // Your solution(s) to exercise001 here!
